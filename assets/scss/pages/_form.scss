@@ -1,0 +1,63 @@
+.form {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        &-small {
+            flex-direction: row;
+            border-bottom: .25rem dotted $font-color;
+            padding-bottom: .5rem;
+        }
+    }
+    &__label {
+        font-size: 1.25rem;
+        margin-bottom: .25rem;
+        min-width: 10rem;
+
+    }
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__last {
+        width: 100%;
+        text-align: center;
+    }
+    &__input {
+        background-color: $background-color;
+        box-shadow: none;
+        padding: .25rem;
+        border: 1px solid limegreen;
+        border-radius: .5rem;
+        color: limegreen;
+        &:active, &:focus {
+            box-shadow: none;
+            border: 1px solid limegreen;
+            border-radius: .5rem;
+            outline: none;
+        }
+    }
+    &__textarea {
+        resize: none;
+    }
+    &__btn {
+        width: 200px;
+        background-color: limegreen;
+        border: none;
+        border-radius: .25rem;
+        padding: .5rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+        i {
+            margin-left: .25rem;
+        }
+    }
+    
+    @include mq($screen-md) {
+        &__item {
+            &-small {
+                flex-direction: column;
+            }
+        }
+    }
+}

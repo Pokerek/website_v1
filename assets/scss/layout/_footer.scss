@@ -1,0 +1,14 @@
+.footer {
+    padding-top: $main-border-space;
+    margin-top: $main-border-space;
+    border-top: $main-border-style;
+    
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @include mq($screen-sm) {
+        font-size: .75rem;
+    }
+}

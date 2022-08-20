@@ -1,0 +1,112 @@
+body {
+    color: $font-color;
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: $background-color;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.main {
+    background-color: $background-color;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.super-box {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    height: calc(100vh - 12.2rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__left {
+        min-width: 230px;
+        justify-content: center;
+        align-items: flex-start;
+        margin-right: .5rem;
+    }
+
+    &__right {
+        overflow: auto;
+    }
+
+    &__left,
+    &__right {
+        height: 100%;
+        display: flex;
+    }
+}
+
+// Scrollbar
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: $font-color;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: $background-color;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $font-color;
+    border-radius: 10px;
+    border: 3px solid $font-color;
+}
+
+@include mq($screen-lg) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@include mq($screen-md) {
+    .container {
+        max-width: 600px;
+    }
+    .super-box {
+        flex-direction: column;
+        &__left,
+        &__right {
+            flex-grow: 1;
+        }
+
+        &__left {
+            height: 50px;
+        }
+    }
+    .title {
+        margin-bottom: 1rem;
+    }
+}
+
+@include mq($screen-sm) {
+    .container {
+        max-width: 400px;
+    }
+
+    .super-box {
+        margin: 0;
+        padding: 0;
+    }
+}
+

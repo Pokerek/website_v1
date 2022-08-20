@@ -1,0 +1,75 @@
+.skills {
+    &__box {
+        width: 100%;
+    }
+    &__name {
+        margin-bottom: .25rem;
+    }
+    &__bar {
+        padding: .25rem;
+        margin-bottom: .5rem;
+        border: 1px solid $font-color;
+        display: flex;
+        align-items: center;
+    }
+    &__progress {
+        height: 2rem;
+        display: inline-block;   
+    }
+    // Progress class
+    .html {
+        background-color: khaki;
+        @keyframes html {
+            from {width: 0;}
+            to {width: 90%;}
+        }
+        animation-name: html;
+        animation-duration: 4s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+    .css {
+        background-color: lightcoral;
+        @keyframes css {
+            from {width: 0;}
+            to {width: 65%;}
+        }
+        animation-name: css;
+        animation-duration: 4s;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+    }
+    .sass {
+        background-color: lightskyblue;
+        @keyframes sass {
+            from {width: 0;}
+            to {width: 60%;}
+        }
+        animation-name: sass;
+        animation-duration: 4s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+    .js {
+        background-color: palevioletred;
+        @keyframes js {
+            from {width: 0;}
+            to {width: 50%;}
+        }
+        animation-name: js;
+        animation-duration: 4s;
+        animation-delay: 2.5s;
+        animation-fill-mode: forwards;
+    }
+    .git {
+        background-color: linen;
+        @keyframes git {
+            from {width: 0;}
+            to {width: 70%;}
+        }
+        animation-name: git;
+        animation-duration: 4s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+    }
+}
