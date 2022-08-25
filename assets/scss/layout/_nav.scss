@@ -1,31 +1,129 @@
+$border: 2px solid $font-color;
+$menu-width: 50vw;
+
 .nav {
-    
-    padding-bottom: $main-border-space;
-    margin-bottom: $main-border-space;
-    border-bottom: $main-border-style;
     
     &__list {
         padding: .25rem .5rem;
-        border: 1px solid $font-color;
+        border-left: $border;
+        border-right: $border;
         display: inline-block;
     }
     &__item {
         display: inline;
-        font-size: 1.2rem;
+        font-size: 1.75rem;
         margin: 0 .5rem;
         a:visited,a {
             color: $font-color;
             text-decoration: none;
         }
-        a:hover {
-            color: $font-alter;
-            transition: color .5s ease-in; 
+        a { @include hover-animation };
+    }
+
+    &--active {
+        transform: translateX(0px);
+    }
+}
+
+.hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+
+    &__box {
+        width: 35px;
+        height: 24px;
+        display: inline-block;
+        position: relative;
+    }
+
+    &__inner {
+        @include hamburger-line;
+        
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color .1s .2s ease-in-out;
+
+        &:before, 
+        &:after {
+            @include hamburger-line;
+
+            content: '';
+            left: 0;
+            transition: transform .2s .2s ease-in-out;
+        }
+
+        &:before {
+            top: -10px;
+        }
+        &:after {
+            top: 10px;
         }
     }
-    @include mq($screen-sm) {
+
+    &--active &__inner {
+        background-color: transparent;
+    }
+
+    &--active &__inner:before {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    &--active &__inner:after {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
+.hamburger,
+.nav {
+    transition: transform .3s .1s ease-in-out;
+}
+
+@include mq($screen-sm) {
+    .hamburger {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        z-index: 1000;
+    }
+    .nav {
+        height: 100vh;
+        width: $menu-width;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translatex(-$menu-width);
+        background-color: $background-color;
+        color: $font-color;
+    
         &__item {
-            font-size: .9rem;
+            font-size: 1.5rem;
+            padding: 1.5rem 1rem;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $font-color;
+            }
+        }
+
+        &__item > a {
+            display: block;
+        }
+
+        &__list {
+            border-left: none;
+            border-right: none;
+            display: flex;
+            flex-direction: column;
+            margin-top: 4rem;
+            border-top: 1px solid $font-color;
+        }
+
+        &--active {
+            transform: translatex(0px);
         }
     }
-    color:black;
 }

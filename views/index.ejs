@@ -2,16 +2,19 @@
     </head>
 
     <body>
-        <%- include('./includes/navigation.ejs') %>
+        <%- include('./includes/header.ejs') %>
         <main class="main">
             <div class="container">
                 <section class="welcome super-box">
                     <div class="welcome__inner">
-                        <img src="./images/logo.png" alt="Logo images" class="welcome__img">
-                        <div class="welcome__arrow">
-                            <h1 class="welcome__link">
-                                HELLO FRIEND<p class="welcome__command-line">|</p>
+                        <a href="/about.me"><img src="./images/logo.png" alt="Logo images" class="welcome__img"></a>
+                        <div class="welcome__info">
+                            <h1 class="welcome__title title write">
+                                HELLO FRIEND
                             </h1>
+                            <p class="welcome__text write">I'm Karol Chrobok</p>
+                            <p class="welcome__text write">Padawan of Fullstack path</p>
+                            <a href="/about.me" class="welcome__btn after-write btn">Drop the mask</a>
                         </div>
                     </div>
                 </section>

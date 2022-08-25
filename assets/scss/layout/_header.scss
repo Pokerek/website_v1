@@ -1,15 +1,61 @@
 .header {
-    margin-top: $main-border-space;
-    margin-bottom: $main-border-space;
+    border-bottom: $main-border-style;
+
     &__inner {
         text-align: center;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 4rem;
+    }
+    &__left {
+        left: 0;
+    }
+    &__right {
+        left: calc(100vw - 6.5rem);
+        display: flex;
+    }
+    &__icon {
+
+        font-size: 2.5rem;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        &,
+        &:visited {
+            color: $font-color;
+            text-decoration: none;
+        }
+        
+        i { @include hover-animation; }
+    }
+
+    &__left,
+    &__right {
+        position: absolute;
     }
     &__title {
         font-size: 2.5rem;
-        margin-bottom: .25rem;
         font-weight: bold;
         color: $font-color;
         text-decoration: none;
+        @include hover-animation;
+    }
+    
+    @include mq($screen-md) {
+        &__title {
+            margin-bottom: 0;
+        }
+    }
+
+    @include mq($screen-sm) {
+        &__left {
+           position: relative;
+           z-index: 1000;
+        }
     }
 }

@@ -17,6 +17,7 @@ exports.getProjects = (req, res, next) => {
 
 exports.getPosts = (req, res, next) => {
     Post.find()
+        .sort({createdDate: -1})
         .then(posts => posts.map(post => { 
             post.convertedDate = convertDate(post.createdDate)
             return post

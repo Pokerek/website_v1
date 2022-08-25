@@ -15,7 +15,7 @@ img {
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 2.25rem;
     text-align: center;
 }
 
@@ -25,9 +25,7 @@ img {
 }
 
 .super-box {
-    margin: 1rem 0;
-    padding: 1rem 0;
-    height: calc(100vh - 12.2rem);
+    height: calc(100vh - 8rem - 2px);
 
     display: flex;
     justify-content: center;
@@ -35,9 +33,12 @@ img {
 
     &__left {
         min-width: 230px;
-        justify-content: center;
-        align-items: flex-start;
-        margin-right: .5rem;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-end;
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid $font-color;
     }
 
     &__right {
@@ -46,10 +47,67 @@ img {
 
     &__left,
     &__right {
-        height: 100%;
+        height: calc(100% - 2rem);
         display: flex;
+        padding: 1rem;
     }
 }
+
+.btn {
+    border: none;
+    background-color: $background-color;
+    color: $font-color;
+    font-size: 2rem;
+    min-width: 3rem;
+    min-height: 2rem;
+    cursor: pointer;
+
+    @include hover-animation;
+    
+    &.active {
+        color: $font-alter;
+    }
+
+    &__text {
+        font-size: inherit;
+        min-width: 0;
+        min-height: 0;
+        display: inline;
+    }
+}
+
+
+.star {
+    position: relative;
+    &__start {
+        margin-left: .5rem;
+        margin-top: .5rem;
+        padding-left: .75em;
+        &::before {
+            left: 0;
+        }
+    }
+    &__end {
+        padding-right: .75em;
+        &::after {
+            right: .25em;
+        }
+    }
+
+    &__start::before,
+    &__end::after {
+        content: '*';
+        font-size: .75em;
+        position: absolute;
+        top: -.25em;
+    }
+}
+
+.alter {
+    color: $font-alter;
+    text-decoration: none;
+}
+
 
 // Scrollbar
 /* Firefox */
@@ -88,10 +146,14 @@ img {
         &__left,
         &__right {
             flex-grow: 1;
+            width: 100%;
+            border-right: none;
         }
 
         &__left {
             height: 50px;
+            justify-content: center;
+            align-items: center;
         }
     }
     .title {
@@ -107,6 +169,7 @@ img {
     .super-box {
         margin: 0;
         padding: 0;
+        height: calc(100vh - 9rem - 2px)
     }
 }
 

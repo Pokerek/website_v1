@@ -1,16 +1,38 @@
 .about {
-    margin: 1rem 0;
+    &__title {
+        margin-bottom: 1rem;
+    }
+
+    &__btn {
+        padding: .5rem;
+    }
+
+    &__btn::before {
+        content: ">";
+        margin-right: .2rem;
+        visibility: hidden;
+    }
+
+    &__btn.active::before {
+        visibility: visible
+    }
+
     &__inner {
-        display: flex;
+        display: none;
         flex-direction: column;
         margin-right: .5rem;
         align-items: flex-start;
+        width: 100%;
+    }
+
+    &__inner.active {
+        display: flex;
     }
 
     &__box {
-        margin-bottom: .75rem;
-        border-bottom: 2px dotted $font-color;
-        padding-bottom: .25rem;
+        padding-bottom: .5rem;
+        margin-bottom: .5rem;
+        border-bottom: 2px solid $font-color;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -35,17 +57,28 @@
         align-items: center;
         justify-content: flex-end;
         margin-bottom: .25rem;
+        line-height: 1rem;
+        display: block;
     }
 
-    &__subinfo {
-        font-size: 1.1rem;
+    &__text {
+        font-size: 1.2rem;
+        margin: .5rem 0;
+    }
+
+    &__subtext {
+        font-size: 1.3rem;
         color: $font-alter;
         display: inline-block;
         text-align: left;
     }
 
-    span {
-        margin-left: 1rem;
+    &__textbox {
+        border: 2px dotted $font-color;
+        padding: .5rem;
+        margin-left: .5rem;
+        font-size: 1.3rem;
+        line-height: 2rem;
     }
 
     &__img {
@@ -58,7 +91,8 @@
     }
 
     &__item {
-        margin-bottom: .25rem;
+        margin-bottom: .5rem;
+        line-height: 1.5rem;
     }
 
     &__link {
@@ -66,6 +100,22 @@
         font-weight: bold;
         &:visited {
             color: $font-alter;
+        }
+    }
+
+    @include mq($screen-md) {
+        &__left {
+            height: 100px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__btn {
+            width: 50%;
+        }
+
+        &__title {
+            width: 100%;
         }
     }
 }

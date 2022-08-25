@@ -14,7 +14,9 @@ const projectSchema = new Schema ({
     image: {
         type: Object,
         required: true
-    } 
+    },
+    tags: [String],
+    technologies: [String]
 })
 
 module.exports = mongoose.model('Project', projectSchema)

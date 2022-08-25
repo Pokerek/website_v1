@@ -2,63 +2,91 @@
     </head>
 
     <body>
-        <%- include('../includes/navigation.ejs') %>
+        <%- include('../includes/header.ejs') %>
             <main class="main">
                 <div class="container">
                     <section class="about super-box">
-                        <h2 class="about__title title super-box__left"><%= title %></h2>
-                        <div class="about__inner super-box__right">
+                        <div class="about__left super-box__left">
+                            <h2 class="about__title title">
+                                <%= title %>
+                            </h2>
+                            <button id="personalBtn" class="about__btn active btn">Personal</button>
+                            <button id="techBtn" class="about__btn btn">Tech</button>
+                        </div>
+                        
+                        <div id="personal" class="about__inner active super-box__right">
                             <article class="about__box">
-                                <h3 class="about__subtitle">My name is 'Karol'</h3>
-                                <p class="about__info">Profession: <span class="about__subinfo">Webdeveloper</span></p>
-                                <p class="about__info">Level: <span class="about__subinfo">Junior</span></p>
+                                <h3 class="about__subtitle">User data</h3>
+                                <p class="about__text">First name: <span class="about__subtext">Karol</span></p>
+                                <p class="about__text">Last name: <span class="about__subtext">Chrobok</span></p>
+                                <p class="about__text">Location: <span class="about__subtext">Silesia, Poland</span></p>
+                                <p class="about__text star star__end">BIO</p>
+                                <div class="about__textbox">
+                                    Do you wanna get to know me? Let's begin!<br><br>
+                                    &emsp;I like black, but you knew this before reading. I'm <strong class='alter'>99% perfectionist mixed with analitical mind</strong>. I swear, I control that... almost everyday. This two things have been created who am I now and also what paths I choose for my tomorrow.<br>
+                                    &emsp;For as long as I can remember, I've been spending a lot of my time with the computer. In childhood, it was mainly games, but in high school I had the opportunity to write my first line of code in Pascal. This is how my path began.<br>
+                                    &emsp;Of course, man does not live by the computer alone. I <strong class='alter'>love adventure</strong>. Being a scout, I had opportunity to surround myself with her all the time. I learned communing with nature and surviving in difficult conditions. Scouting is also the best place to <strong class='alter'>learn soft skills such as being a leader and presenting your ideas</strong>.<br>
+                                    &emsp;I'm not an athlete, but I love to smim a few pools from time to time or work with my body in calisthenics. I have also run in the past and even completed one half marathon. Somewhere deep inside me, there is also a smoldering love for basketball.<br>
+                                    &emsp;Every developer has to like leraning new things. I'm lucky becouse apart from learning, I also <strong class='alter'>enjoy teaching someone</strong>. That's why I have been teaching math since 2015. 
+                                </div>
+                                <p class="about__info star star__start">You're recruter and you're looking for technical information? Just click <span id="clickTech" class="btn btn__text"> >> here <<</span></p>
                             </article>
+                        </div>
+
+                        <div id="tech" class="about__inner super-box__right">
                             <article class="about__box">
-                                <h3 class="about__subtitle">Personal profile</h3>
+                                <h3 class="about__subtitle">Tech data</h3>
+                                <p class="about__text">Profession: <span class="about__subtext">Developer</span></p>
+                                <p class="about__text">Level: <span class="about__subtext">Junior</span></p>
+                                <p class="about__text">Main language: <span class="about__subtext">Javascripts (Node.JS)</span></p>
                                 <p class="about__text">
-                                    I’m looking for an opportunity
-                                    to start my career as a Node.js
-                                    developer and rise into fullstack developer. I have been
-                                    looking for the right path for
-                                    long time and now I know it’s
-                                    the backend based on Node.js
+                                    Languages:
+                                    <span class="alter">English - B1</span>
+                                    <span>|</span>
+                                    <span class="alter">Polish - Native</span>
                                 </p>
+                                <p class="about__text">Motivation:</p>
+                                <div class="about__textbox">
+                                    I’m looking for an opportunity to start my career as a Node.js developer and rise into fullstack developer. I have been looking for the right path for long time and now I know it’s the backend based on Node.js
+                                </div>
                             </article>
                             <article class="about__box">
                                 <h3 class="about__subtitle">Experience & <a href="/project.file" class="about__link">Projects</a></h3>
-                                <h4 class="about__subinfo">Junior Frondend Developer</h4>
+                                <p class="about__text">Junior Frondend Developer</p>
                                 <p class="about__info">( Meetmedia Sp. z o.o. - 8 months, Remote )</p>
                                 <ul class="about__list">
                                     <li class="about__item">
-                                        I was cut layouts from Photoshop file. I used html and Sass to create all files.
-                                    </li> 
-                                    <li class="about__item">
-                                        I helped clients as helpdesk to solve them issues with live websites.
+                                        Tech stack: HTML, CSS, SASS, BOOTSTRAP, JS
                                     </li>
                                     <li class="about__item">
-                                        I managmented in three person team.
+                                        Responsibility: I created the website code based on ready-made graphics. I contacted clients regarding comments on the website being created. I managmend the team and distributed tasks among developers. I transferred and installed ready-made projects to the client's server.
+                                    </li>
+                                    <li class="about__item">
+                                        Main projects: <a href="https://bezuzyteczna.pl/" class="alter">Bezuzyteczna</a>, <a href="https://www.thalgo.pl/" class="alter">Thalgo</a>
                                     </li>
                                 </ul>
-                            </article> 
+                            </article>
                             <article class="about__box">
-                                <h3 class="about__subtitle">Languages & Soft skills</h3>
-                                <p class="about__info"> 
-                                    <span class="about__subinfo">English - B1</span>
-                                    <span>|</span>
-                                    <span class="about__subinfo">Polish - Native</span>
-                                </p>
-                                <ul class="about__list">
-                                    <li class="about__item">Hardworking on deadlines</li>
-                                    <li class="about__item">Creative solution delivery</li>
-                                    <li class="about__item">Fast learning efficient man</li>
-                                    <li class="about__item">Born leader</li>
-                                </ul>
-                            </article> 
+                                <h3 class="about__subtitle">Tech stack:</h3>
+                                <p class="about__text">Frondend</p>
+                                <div class="about__textbox">
+                                    HTML, CSS, SASS, JS, Bootstrap
+                                </div>
+                                <p class="about__text">Backend</p>
+                                <div class="about__textbox">
+                                    Node.js, Express.js, mongodb
+                                </div>
+                                <p class="about__text">Tools</p>
+                                <div class="about__textbox">
+                                    Heroku, Git (Github), VScode, Postman
+                                </div>
+                            </article>
                             <article class="about__box">
-                                <h3 class="about__subtitle">Learn map (Soon...)</h3>
-                            </article> 
+                                <h3 class="about__subtitle">Learn map (Comming soon...)</h3>
+                            </article>
                         </div>
                     </section>
                 </div>
             </main>
+            <script src="/javascripts/about.js"></script>
             <%- include('../includes/footer.ejs') %>

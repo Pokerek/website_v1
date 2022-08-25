@@ -30,16 +30,40 @@
         max-width: 400px;
         margin-bottom: 1rem;
     }
-    &__link {
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
         color: $font-color;
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 700;
-        text-decoration: none;
         display: flex;
         align-items: center;
         i {
             font-size: 4rem;
             margin: 0 1rem;
+        }
+    }
+
+    &__text {
+        font-size: 2rem;
+        margin-top: .5rem;
+    }
+
+    &__btn {
+        background-color: $font-alter;
+        color: $background-color;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: .25rem;
+        text-decoration:none;
+
+        &:hover {
+            color: $font-color;
         }
     }
 
