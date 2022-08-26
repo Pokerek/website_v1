@@ -96,6 +96,7 @@ $menu-width: 50vw;
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
         transform: translatex(-$menu-width);
         background-color: $background-color;
         color: $font-color;

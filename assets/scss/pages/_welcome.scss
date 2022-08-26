@@ -82,4 +82,33 @@
             max-width: 300px;
         }
     }
+
+    @media (max-height: 660px) {
+        &__img {
+            display: none;
+        }
+    }
+
+    //Low height of page
+    @media (max-height: 660px) {
+        &__img {
+            display: none;
+        }
+    }
+
+    @media (max-height: 290px) {
+       &__title {
+            font-size: 2rem;
+            margin-bottom: .5rem;
+       }
+       &__text {
+            font-size: 1.5rem;
+       }
+       &__btn {
+            margin-top: .5rem;
+            padding: .5rem;
+            font-size: 1.5rem;
+            line-height: 2rem;
+       }
+    }
 }

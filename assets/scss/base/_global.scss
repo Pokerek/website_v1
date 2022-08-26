@@ -118,7 +118,7 @@ img {
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 1rem;
 }
 
 *::-webkit-scrollbar-track {
@@ -170,6 +170,12 @@ img {
         margin: 0;
         padding: 0;
         height: calc(100vh - 9rem - 2px)
+    }
+}
+
+@include mq($screen-xsm) {
+    .container {
+        max-width: 350px;
     }
 }
 

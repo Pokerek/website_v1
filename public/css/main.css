@@ -164,7 +164,7 @@ img {
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 1rem;
 }
 
 *::-webkit-scrollbar-track {
@@ -211,6 +211,11 @@ img {
     margin: 0;
     padding: 0;
     height: calc(100vh - 9rem - 2px);
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 350px;
   }
 }
 .header {
@@ -368,6 +373,7 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     transform: translatex(-50vw);
     background-color: black;
     color: white;
@@ -480,6 +486,31 @@ img {
 @media (max-width: 991px) {
   .welcome__img {
     max-width: 300px;
+  }
+}
+@media (max-height: 660px) {
+  .welcome__img {
+    display: none;
+  }
+}
+@media (max-height: 660px) {
+  .welcome__img {
+    display: none;
+  }
+}
+@media (max-height: 290px) {
+  .welcome__title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .welcome__text {
+    font-size: 1.5rem;
+  }
+  .welcome__btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
