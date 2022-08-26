@@ -6,9 +6,10 @@
 }
 
 @mixin hover-animation {
-    transition: color .5s ease-in-out;
+    transition: color .5s ease-in;
+    color: $font-color;
     &:hover {
         color: $font-alter;
-        transition: color .5s ease-in-out;
+        transition: color .5s ease-in;
     }   
 }

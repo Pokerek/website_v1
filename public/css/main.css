@@ -111,11 +111,13 @@ img {
   min-width: 3rem;
   min-height: 2rem;
   cursor: pointer;
-  transition: color 0.5s ease-in-out;
+  text-decoration: none;
+  transition: color 0.5s ease-in;
+  color: white;
 }
 .btn:hover {
   color: limegreen;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
 }
 .btn.active {
   color: limegreen;
@@ -154,6 +156,56 @@ img {
 .alter {
   color: limegreen;
   text-decoration: none;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-control {
+  width: 100%;
+  min-height: 4rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.form-btn {
+  align-self: flex-end;
+  width: max-content;
+  border: 2px solid transparent;
+  transition: border 0.5s ease-in-out;
+}
+.form-btn:hover {
+  transition: border 0.5s ease-in-out;
+  border: 2px solid limegreen;
+}
+.form label {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.form input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.form textarea {
+  resize: none;
+  padding: 0.5rem;
+  height: auto;
+}
+.form textarea,
+.form input {
+  border: 2px dotted white;
+  transition: border 0.5s ease-in-out;
+  background-color: black;
+  color: white;
+}
+.form textarea:focus, .form textarea:focus-visible,
+.form input:focus,
+.form input:focus-visible {
+  border: 2px solid limegreen;
+  transition: border 0.5s ease-in-out;
+  outline: none;
 }
 
 /* Firefox */
@@ -248,11 +300,12 @@ img {
   text-decoration: none;
 }
 .header__icon i {
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
+  color: white;
 }
 .header__icon i:hover {
   color: limegreen;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
 }
 .header__left, .header__right {
   position: absolute;
@@ -262,11 +315,12 @@ img {
   font-weight: bold;
   color: white;
   text-decoration: none;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
+  color: white;
 }
 .header__title:hover {
   color: limegreen;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
 }
 @media (max-width: 991px) {
   .header__title {
@@ -296,11 +350,12 @@ img {
   text-decoration: none;
 }
 .nav__item a {
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
+  color: white;
 }
 .nav__item a:hover {
   color: limegreen;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in;
 }
 .nav--active {
   transform: translateX(0px);
@@ -612,6 +667,7 @@ img {
 .about__text {
   font-size: 1.2rem;
   margin: 0.5rem 0;
+  line-height: 2rem;
 }
 .about__subtext {
   font-size: 1.3rem;
@@ -627,7 +683,11 @@ img {
   line-height: 2rem;
 }
 .about__img {
-  border-radius: 1rem;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+  height: 3.5rem;
+  border-radius: 0.25rem;
+  background-color: white;
 }
 .about__list {
   margin-top: 0.5rem;
@@ -640,6 +700,7 @@ img {
 .about__link {
   text-decoration: none;
   font-weight: bold;
+  color: limegreen;
 }
 .about__link:visited {
   color: limegreen;
@@ -664,10 +725,15 @@ img {
   align-items: flex-start;
   flex-direction: column;
 }
+.journal__btn {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
 
 .post {
   border: 2px dotted white;
   padding: 0.5rem;
+  width: calc(100% - 4px - 2rem);
 }
 .post:not(:last-child) {
   margin-bottom: 1rem;
@@ -682,6 +748,10 @@ img {
 }
 .post__text {
   line-height: 1.5rem;
+}
+.post__btn {
+  text-decoration: none;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,8 @@
 const path = require('path')
+
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
 //Models and others
 const errorController = require('./controllers/error')
@@ -16,6 +18,7 @@ app.set('views', 'views')
 
 // Routers init
 const indexRouter = require('./routes/index')
+const adminRouter = require('./routes/admin')
 
 // express config
 app.use(express.json())
@@ -24,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routers use
 app.use('/', indexRouter)
+app.use('/admin/', adminRouter)
 
 // catch 404 and forward to error handler
 app.use(errorController.get404)
