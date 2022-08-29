@@ -61,6 +61,7 @@ img {
     min-width: 3rem;
     min-height: 2rem;
     cursor: pointer;
+    text-decoration: none;
 
     @include hover-animation;
     
@@ -106,6 +107,67 @@ img {
 .alter {
     color: $font-alter;
     text-decoration: none;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+
+    &-control {
+        width: 100%;
+        min-height: 4rem;
+        margin-bottom: .5rem;
+
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    &-btn {
+        align-self: flex-end;
+        width: max-content;
+        border: 2px solid transparent;
+        transition: border .5s ease-in-out;
+        &:hover {
+            transition: border .5s ease-in-out;
+            border: 2px solid $font-alter;
+        }
+        
+    }
+
+    label {
+        font-size: 2rem;
+        margin-bottom: .5rem;
+    }
+
+    input {
+        padding: .5rem;
+        font-size: 1.5rem;
+        
+    }
+
+    textarea {
+        resize: none;
+        padding: .5rem;
+        height: auto;
+    }
+
+    textarea,
+    input {
+        border: 2px dotted $font-color;
+        transition: border .5s ease-in-out;
+        background-color: $background-color;
+        color: $font-color;
+        
+        &:focus,
+        &:focus-visible {
+            border: 2px solid $font-alter;
+            transition: border .5s ease-in-out;
+            outline: none;
+        }
+    }
 }
 
 

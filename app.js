@@ -1,6 +1,8 @@
 const path = require('path')
+
 const express = require('express')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
 //Models and others
 const errorController = require('./controllers/error')
@@ -14,23 +16,30 @@ require('dotenv').config()
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
-// Routers init
-const indexRouter = require('./routes/index')
-
 // express config
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
+// Routers init
+const indexRouter = require('./routes/index')
+
 // Routers use
 app.use('/', indexRouter)
+
+// DEV
+if(process.env.STATUS === 'DEV') {
+  const adminRouter = require('./routes/admin')
+  app.use('/admin/', adminRouter)
+}
+
 
 // catch 404 and forward to error handler
 app.use(errorController.get404)
 
 
 // database connect
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@website.omhpxao.mongodb.net/webpage?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_URL}`)
   .then(result => {
     const port = process.env.PORT || 3000
     console.log('Connect to DB')
