@@ -11,7 +11,7 @@ exports.getAddPost = (req, res, next) => {
 
 exports.postAddPost = (req, res, next) => {
     const title = req.body.title
-    const text = req.body.title
+    const text = req.body.text
     const tags = req.body.tags
 
     const post = new Post({
